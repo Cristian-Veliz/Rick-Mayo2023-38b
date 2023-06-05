@@ -1,0 +1,36 @@
+.container{
+  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px; 
+  
+  
+}
+
+.container input{
+    height: 30px;
+    width: 300px;
+    background-color: whitesmoke;  
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px 0px rgba(224, 248, 4, 0.75);
+
+}
+
+.container button{
+    background-color: rgb(255, 30, 0) ;
+    font: oblique bold 100% cursive;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 5px;
+    border-radius: 5px;
+    color: black;
+    //box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.container button:hover {
+  background-color:rgb(255, 123, 0);
+  //box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  //transition: 0.5;
+}
+
