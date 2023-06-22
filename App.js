@@ -9,9 +9,12 @@ import Nav from './components/nav/Nav.jsx';
 import Form from './components/form/Form.jsx';
 import Favorites from './components/favorites/Favorites';
 
+import { connect } from 'react-redux';
+import { addFav, removeFav } from "./redux/actions";
+
 //revisar bien la importaciones de los componentes y hooks
 
-function App() {
+function App({ removeFav }) {
 
    const [characters, setCharacters] = useState([]);
    const[access, setAccess] = useState(false);
@@ -33,6 +36,10 @@ function App() {
       !access && navigate('/');
    }, [access]);
 
+   function logout() {
+      setAccess(false);
+      navigate("/");
+    }
 
    const onSearch = id =>{
    // Para evitar duplicados
@@ -52,6 +59,7 @@ function App() {
    }
    const onClose = id => {
       setCharacters(characters.filter(element => element.id !== Number(id)))
+      removeFav(Number(id));
    }
 
    const location = useLocation();
@@ -61,7 +69,7 @@ function App() {
    return (
       <div className='App' >
          {
-            location.pathname !== '/' && <Nav onSearch={onSearch}/>
+            location.pathname !== '/' && <Nav logout={logout} onSearch={onSearch}/>
             
             // El && si el 1ro es true retorna el segundo
 
@@ -70,7 +78,7 @@ function App() {
       
       <Routes>
 
-         <Route exact path='/' element={<Form login={login}/>}/>
+         <Route path='/' element={<Form login={login}/>}/>
          <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/>
          <Route path='/about' element={<About/>}/>
          <Route path='/detail/:id' element={<Detail/>}/>
@@ -81,7 +89,18 @@ function App() {
     );
 }
 
-export default App;
+function mapDispatch(dispatch) {
+   return {
+     addFav: function (char) {
+       dispatch(addFav(char));
+     },
+     removeFav: function (id) {
+       dispatch(removeFav(id));
+     },
+   };
+ }
+ 
+ export default connect(null, mapDispatch)(App);
 
 //Notas:
 // recordar instalar axios 'npm install axios' e importar axios!

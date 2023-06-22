@@ -7,8 +7,8 @@ import styles from "../nav/Nav.module.css";
 
 
 
-const Nav = (props) =>{
-    const[access, setAccess] = useState({});    
+const Nav = ({onSearch, logout}) =>{
+      
 return(
     <div className={styles.nav}>
         <NavLink to='/home'>
@@ -21,13 +21,10 @@ return(
             <button>About</button>
         </NavLink>
         <NavLink to='/'>
-            <button onClick={() => setAccess(false)}>Logout</button>
+            <button onClick={logout}>Logout</button>
         </NavLink>
 
-
-
-
-       <SearchBar onSearch={props.onSearch} />
+        <SearchBar onSearch={onSearch} />
     </div>
 )
 
