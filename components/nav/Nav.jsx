@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchBar from "../searchBar/SearchBar";
 import { NavLink } from "react-router-dom";
+import styles from "../nav/Nav.module.css";
 
 
 
@@ -9,7 +10,7 @@ import { NavLink } from "react-router-dom";
 const Nav = (props) =>{
     const[access, setAccess] = useState({});    
 return(
-    <div>
+    <div className={styles.nav}>
         <NavLink to='/home'>
             <button>Home</button>
         </NavLink>

@@ -45,6 +45,7 @@ function Card(props) {
          <h3>Name: {name}</h3>
          <h3>Especies: {species}</h3>
          <h3>Gender: {gender}</h3>
+         <h5>ID: {id}</h5>
          {/* <h2>Origin: {origin}</h2> */}
          </Link>
       </div >

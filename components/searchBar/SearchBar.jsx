@@ -17,6 +17,11 @@ export default function SearchBar({onSearch}) {
       setId(''); 
    }
 
+   const randomChar = () => {
+      const numRan = Math.floor(Math.random() * 825) + 1;
+      onSearch(numRan);
+   }
+
    return (
       <div className={styles.container}>
          <input 
@@ -24,16 +29,16 @@ export default function SearchBar({onSearch}) {
          type='text'
          name= 'search'
          id= 'search'
-         placeholder="Enter character id..."
+         placeholder="Enter character id of 826..."
          onChange={handleChange} 
          />
-         <button onClick={handleOnClick}>SEARCH</button>
-         {/* <button onClick={() => onSearch(id)}>AGREGAR</button> */}
+         <button onClick={handleOnClick}>Search</button>
+         <button onClick={randomChar}>Random</button>
+        
       </div >
    );
 }
 
 // handleChange es como un manejador que esta vinculado al evento 
 // onChange lo uso para cuando el usuario hace cambios
-//onClick lo uso para cuando el usuario hace click, recordar pasar la funcion como callback para que solo se ejecute cuando el usuario 
-//haga click
+// onClick lo uso para cuando el usuario hace click, recordar pasar la funcion como callback para que solo se ejecute cuando el usuario haga click

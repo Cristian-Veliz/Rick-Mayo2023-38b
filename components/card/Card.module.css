@@ -61,10 +61,13 @@
   border: 0.5px solid black;
   border-radius: 8px;
   background-color: rgba(26, 214, 120, 0.63);
+  
+}
 
- 
-
-   
+h5 {
+  color:white;
+  font-size: normal;
+  
 }
 
 /* Nota: si comento el relative se cambia a la izquierda el boton de cerrar card  */
