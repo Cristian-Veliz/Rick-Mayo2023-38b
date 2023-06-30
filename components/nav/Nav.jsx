@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+
 import SearchBar from "../searchBar/SearchBar";
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import styles from "../nav/Nav.module.css";
 
 
 
 
 
+
+
+
 const Nav = ({onSearch, logout}) =>{
+
+
       
 return(
     <div className={styles.nav}>

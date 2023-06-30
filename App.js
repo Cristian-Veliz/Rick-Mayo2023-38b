@@ -36,9 +36,10 @@ function App({ removeFav }) {
       !access && navigate('/');
    }, [access]);
 
-   function logout() {
-      setAccess(false);
-      navigate("/");
+   function logout(access) {
+      setAccess(false) 
+      navigate("/")
+      
     }
 
    const onSearch = id =>{
