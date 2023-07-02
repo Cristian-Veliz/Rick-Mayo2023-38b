@@ -49,8 +49,8 @@ function App({ removeFav }) {
    if(characterId.length) return alert('¡The character already exists!');
    if(id < 1 || id > 826) return alert('¡There is no character with the entered ID!'); 
 
-   axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-         //console.log(data)
+   axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+         //console.log(data) 
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          } else {
@@ -106,3 +106,5 @@ function mapDispatch(dispatch) {
 //Notas:
 // recordar instalar axios 'npm install axios' e importar axios!
 //recordar instalar todas las dependencias en el package.json
+
+// nota

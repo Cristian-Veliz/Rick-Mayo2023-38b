@@ -15,3 +15,26 @@
     
   }
   
+ 
+  .favorita select{
+    
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    position:block; 
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: rgba(26, 214, 120, 0.63);
+    box-shadow: 10px 10px 5px 0px rgba(224, 248, 4, 0.75);
+
+    font-size: 8px;
+    font: oblique bold 100% cursive;
+    color: black;
+    border-radius: 5px;
+    padding: 1px;
+    height: 25px;
+    width: 150px;
+    
+  } 
+  

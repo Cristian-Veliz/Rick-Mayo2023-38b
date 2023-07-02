@@ -5,11 +5,6 @@ import styles from "../nav/Nav.module.css";
 
 
 
-
-
-
-
-
 const Nav = ({onSearch, logout}) =>{
 
 
